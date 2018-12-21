@@ -1,20 +1,13 @@
 <template>
   <v-app style="background-color: transparent; margin:0px;  min-width:250px;">
-    <!-- HEADER -->
-    <!--
-      Tiene 2 parámetros y 1 función que recoge el dato que emitió un hijo
-    -->
     <Headerw :menus="menu_principal"></Headerw>
-    <!-- Carousel -->
-    <!-- Solo se renderiza el archivo que tiene dicho nombre -->
+
     <router-view name="carousel"></router-view>
-    <!-- Solo se renderiza el archivo que tiene dicho nombre -->
-    <!-- Efecto que se agrega en cada ruta -->
+
     <Parallax
       :item="rutaActual"
       srcImagen="https://www.tendencias.kpmg.es/wp-content/uploads/2018/05/GettyImages-672310452-e1525335107388.jpg"
     ></Parallax>
-    <!-- Se encuentra la sección donde estarán las demás páginas -->
 
     <router-view @epath="nombreRuta($event);"></router-view>
 
@@ -87,13 +80,13 @@ export default {
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
 body {
   color: #fff;
-  background: #949c4e;
+  background: white;
   background: linear-gradient(
     135deg,
-    rgba(0, 25, 100, 1) 25%,
-    rgba(75, 150, 225, 1) 25%,
-    rgba(75, 150, 225, 1) 60%,
-    rgba(0, 25, 100, 1) 60%
+    rgb(16, 60, 145) 20%,
+    rgba(248, 172, 0, 0.1) 20%,
+    rgba(248, 172, 0, 0.1) 75%,
+    rgb(16, 60, 145) 75%
   );
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,

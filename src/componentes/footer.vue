@@ -8,33 +8,20 @@
       class="white--text text-xs-center"
     >
       <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-3 white--text" icon>
+        <v-btn v-for="icon in icons" :key="icon" class="mx-2 white--text" icon>
           <v-icon size="24px">{{ icon }}</v-icon>
         </v-btn>
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
         <v-container grid-list-xl>
-          <v-layout justify-space-around align-center>
-            <v-flex xs12 sm4>
+          <v-layout wrap justify-space-around align-center>
+            <v-flex xs6 sm3 md3 class="mb-3">
               <v-layout column justify-center align-center>
-                <h3>PRINCIPAL</h3>
+                <h3 class="orange--text">PRINCIPAL</h3>
                 <router-link
                   v-for="menu in menus"
                   :key="menu.nombre"
-                  :to="menu.ruta"
-                >
-                  <v-btn flat round class="my-0">{{ menu.nombre }} </v-btn>
-                </router-link>
-              </v-layout>
-            </v-flex>
-            <v-flex xs12 sm4>
-              <v-layout column justify-center align-center>
-                <h3>SERVICIOS</h3>
-                <router-link
-                  v-for="menu in menus"
-                  :key="menu.nombre"
-                  style="text-decoration: none;"
                   :to="menu.ruta"
                 >
                   <v-btn flat round class="my-0">{{ menu.nombre }} </v-btn>

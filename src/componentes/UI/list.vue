@@ -1,8 +1,8 @@
 <style scoped>
 .border_hover:hover {
-  border-left: 10px solid rgba(15, 15, 15, 1);
-  background-color: rgba(15, 15, 15, 0.7);
-  color: white;
+  border-left: 10px solid rgba(15, 15, 15, 0.5);
+  background-color: rgba(15, 15, 15, 0.1);
+  color: black;
   font-weight: bold;
 }
 .v-list {

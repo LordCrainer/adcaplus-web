@@ -2,7 +2,7 @@
   <v-carousel hide-delimiters height="200" class="comentario">
     <v-carousel-item v-for="(data, i) in datos" :key="i">
       <v-layout align-center column justify-center fill-height>
-        <h1 class="display-1 font-weight-bold mb-3 white--text">
+        <h1 class="headline font-weight-bold mb-3 white--text">
           {{ data.titulo }}
         </h1>
         <h3 class="subheading white--text">{{ data.text }}</h3>

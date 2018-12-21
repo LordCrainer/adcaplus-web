@@ -49,17 +49,24 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn
+          id="botonBar"
+          flat
+          v-for="menu in menus"
+          :key="menu.nombre"
+          :to="menu.ruta"
+          class="font-weight-black caption"
+          :color="color_text.split('--')[0]"
+        >
+          {{ menu.nombre }}
+        </v-btn>
         <!--
-          <v-btn flat v-for="menu in menus" :key="menu.nombre">{{
-            menu.nombre
-          }}</v-btn>
+          <Navbar
+            @epath="nombreRuta($event);"
+            :menus="menus"
+            :clases="color_text"
+          ></Navbar>
         -->
-
-        <Navbar
-          @epath="nombreRuta($event);"
-          :menus="menus"
-          :clases="color_text"
-        ></Navbar>
       </v-toolbar-items>
       <v-btn
         flat
@@ -90,8 +97,8 @@ export default {
       src_logo:
         "https://uploads.codesandbox.io/uploads/user/17fffd86-3ee1-4ca9-abc0-4e76a2cb57f0/3C31-logo3.png",
       offsetTop: 0,
-      color_toolbar: "rgba(50, 50, 50, 0.8)",
-      color_text: "white--text",
+      color_toolbar: "rgba(255, 255, 255, 0.9)",
+      color_text: "black--text",
       height_toolbar: "70px",
       drawer_flag: false,
       color: "black",
@@ -105,13 +112,13 @@ export default {
     onScroll(e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop;
       if (this.offsetTop > 30) {
-        this.color_toolbar = "rgba(255, 255, 255, 0.9)";
-        this.height_toolbar = "70px";
-        this.color_text = "black--text";
-      } else {
         this.color_toolbar = "rgba(50, 50, 50, 0.8)";
         this.height_toolbar = "70px";
         this.color_text = "white--text";
+      } else {
+        this.color_toolbar = "rgba(255, 255, 255, 0.9)";
+        this.height_toolbar = "70px";
+        this.color_text = "black--text";
       }
     },
     nombreRuta(ruta) {
